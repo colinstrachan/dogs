@@ -1,0 +1,19 @@
+<div class="breeds-title">Breeds</div>
+<div class="breeds-list">
+  <ul>
+    <% @breeds.each do |breed| %>
+      <li>
+        <%= link_to breed[0].capitalize, breed_path(breed[0]) %>
+        <% if breed[1].empty? == false %>
+          <ul>
+          <% breed[1].each_with_index do |subbreed, index| %>
+            <li>
+              <%= link_to subbreed.capitalize, breed_path([breed.first, breed[1][index]]) %>
+            </li>
+          <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

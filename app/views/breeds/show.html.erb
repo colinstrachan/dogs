@@ -1,0 +1,10 @@
+<div class="dog-title">
+  <% breed_name = @breed.split("/") %>
+  <% if breed_name.length == 1 %>
+    <%= breed_name[0].capitalize %>
+  <% else %>
+    <%= breed_name[1].capitalize %> <%= breed_name[0].capitalize %>
+  <% end %>
+</div>
+<div class="dog-image"><%= image_tag @breed_image %></div>
+<div class="dog-return-link"><%= link_to "Back to dog list", breeds_path %></div>
